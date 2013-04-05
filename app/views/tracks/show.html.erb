@@ -1,0 +1,9 @@
+<p>Album</p>
+<%= Album.find(@track.album_id).title %>
+<p>Song Title</p>
+<%= Single.find(@track.single_id).song %>
+<p>Type</p>
+<%= @track.bonus_regular %>
+<p>Position</p>
+<%= @track.album_position %>
+<%= link_to "delete", track_url(@track), method: :delete %>

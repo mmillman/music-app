@@ -1,0 +1,9 @@
+<h1>Band</h1>
+<p><%= @band.name %></p>
+
+<h2>Band Members</h2>
+<% Band.artists.each %>
+
+<%= link_to "delete", band_url(@band) %>
+<br>
+<%= link_to "all bands", bands_url %>

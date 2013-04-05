@@ -1,0 +1,12 @@
+<h1>Album Title</h1>
+<p><%= @album.title %></p>
+
+<% @band = Band.find(@album.band_id) %>
+
+<h2>Band</h2>
+<p><%= link_to @band.name, band_url(@band) %></p>
+
+<h3>Status of recording</h3>
+<p>
+  <%= @album.status %>
+</p>

@@ -1,0 +1,16 @@
+<%= form_for(@album) do |f| %>
+<%= f.label "Album Title" %><br />
+<%= f.text_field :title %><br />
+
+<%= f.label "Select a band"%>
+
+<%= f.select :band_id, Band.all.map { |band| [band.name, band.id] } %>
+<p>Status</p>
+<%= f.label :live %>
+<%= f.radio_button(:status, "live") %>
+<%= f.label :studio %>
+<%= f.radio_button(:status, "studio") %>
+<p><%= f.submit "Make Album" %></p>
+<% end %>
+
+

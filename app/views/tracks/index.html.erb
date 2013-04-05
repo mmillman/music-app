@@ -1,0 +1,12 @@
+<h1>Tracks</h1>
+
+<ul>
+<% @tracks.each do |track| %>
+
+<li>
+  <%= Album.find(track.album_id).title %>
+  <%= track.album_position %>: <%= Single.find(track.single_id).song %>
+  <%= track.bonus_regular %>
+</li>
+</ul>
+<% end %>

@@ -1,0 +1,13 @@
+<%= form_for(@single) do |f| %>
+<%= f.label "Name your tune" %>
+<%= f.text_field :song %> <br />
+<%= f.label "Select composer" %>
+<%#=
+ f.select(
+   :artist_id,
+   Artist.all.map { |artist| ["#{artist.first_name} #{artist.last_name}", artist.id] }
+ )
+%>
+<%= f.collection_select :artist_id, Artist.all, :id, :full_name%>
+<%= f.submit "Make song" %>
+<% end %>

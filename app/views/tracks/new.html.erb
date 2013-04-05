@@ -1,0 +1,27 @@
+<%= form_for(@track) do |f| %>
+<%=
+  f.select(
+    :album_id,
+    Album.all.map { |album| [album.title, album.id] }
+  )
+%>
+
+<%=
+  f.select(
+    :single_id,
+    Single.all.map { |single| [single.song, single.id] }
+  )
+%>
+<p>Track Type</p>
+<p><%= f.label :bonus %>
+<%= f.radio_button(:bonus_regular, "bonus") %>
+<%= f.label :regular %>
+<%= f.radio_button(:bonus_regular, "regular") %>
+</p>
+<p><%= f.label "album position"%> </p>
+<p><%= f.text_field :album_position %></p>
+<p>
+<%= f.submit "Create track" %>
+</p>
+
+<% end %>

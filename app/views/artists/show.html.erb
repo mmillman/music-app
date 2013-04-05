@@ -1,0 +1,7 @@
+<h1>Artist</h1>
+<h1><%= @artist.first_name%></h1>
+<p><%= @artist.last_name %></p>
+
+
+<%= link_to "Delete", artist_url(@artist), method: :delete %>
+<%= link_to "<< Back to Artists List", artists_path %>

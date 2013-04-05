@@ -1,0 +1,4 @@
+<p><%= @single.song %></p>
+<p><%= Artist.find(@single.artist_id).full_name %></p>
+<%= link_to "Delete", single_url(@single), method: :delete %>
+<%= link_to "<< Back to Songs List", singles_path %>
